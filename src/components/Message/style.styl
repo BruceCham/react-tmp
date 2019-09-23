@@ -1,0 +1,73 @@
+.messageUi
+  width: 90%;
+  max-width: 640PX;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  background-color: #fff;
+  font-size: 14PX;
+  border-radius: 5PX;
+  box-shadow: 0 0 8PX rgba(0,0,0,.1);
+  pointer-events: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: .2s;
+  animation-duration: .2s;
+.messageUi-content
+  padding: 50PX 30PX
+  line-height: 22PX
+  text-align: center
+.messageUi-btn
+  display: flex
+  width: 100%
+  height: 50PX
+  line-height: 50PX
+  font-size: 0
+  border-top: 1PX solid #D0D0D0
+  background-color: #F2F2F2
+  position: relative
+  text-align: center
+  border-radius: 0 0 5PX 5PX
+.messageUi-btn div
+  width: 50%
+  flex-grow: 1
+  font-size: 14PX
+  cursor: pointer
+  text-align: center
+.messageUi-btn div[no]
+  border-right: 1PX solid #D0D0D0
+  border-radius: 0 0 0 5PX
+.messageUi-btn div[yes]
+  color: #40AFFE
+@-webkit-keyframes messageUi-anim-scale {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5)
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@keyframes messageUi-anim-scale {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5)
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+.messageUi-scale
+  animation-name: messageUi-anim-scale
+  -webkit-animation-name: messageUi-anim-scale

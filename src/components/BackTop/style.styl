@@ -1,0 +1,61 @@
+.backtop
+  z-index: 9999;
+  position: fixed;
+  right: 6px
+  bottom: 24px
+  width: 26px
+  height: 26px
+  border-radius: 50%
+  opacity: 0
+  background-image: url('./top.png')
+  background-repeat: no-repeat
+  background-size: cover
+
+.mescroll-fade-in {
+    animation: mescrollFadeIn .5s linear forwards
+}
+
+@-webkit-keyframes mescrollFadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes mescrollFadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+.mescroll-fade-out {
+    pointer-events: none;
+    animation: mescrollFadeOut .5s linear forwards
+}
+
+@-webkit-keyframes mescrollFadeOut {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes mescrollFadeOut {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}

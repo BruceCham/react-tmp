@@ -1,0 +1,24 @@
+.clearfix:after
+  content " "
+  display block
+  clear both
+
+textOverflow()
+  text-overflow ellipsis
+  white-space nowrap
+  overflow hidden
+
+retina(str, type = '@2x')
+  $lasts = '.png'
+  if match('\.jpg$', str)
+    $lasts = '.jpg'
+  if match('\.jpeg$', str)
+    $lasts = '.jpeg'
+  $str = split($lasts, str)
+  $str = join('', $str)
+  $str = join(type, $str, $lasts)
+  $str
+
+backgroundImg(str)
+  background-image: url(str)
+  background-image: -webkit-image-set(url(str) 1x, url(retina(str)) 2x)

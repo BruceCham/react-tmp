@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <link rel="stylesheet" href="/lib/jsoneditor.min.css">
+    <script>;(function(f,i){var h=document,d=window,b=h.documentElement,e=document.createElement("style"),c;function g(){var j=b.getBoundingClientRect().width;i=i||540;j>i&&(j=i);var k=j*100/f;if(j>=768){k=160;};e.innerHTML="html{font-size:"+k+"px;}"}if(b.firstElementChild){b.firstElementChild.appendChild(e)}else{var a=h.createElement("div");a.appendChild(e);h.write(a.innerHTML);a=null}g();d.addEventListener("resize",function(){clearTimeout(c);c=setTimeout(g,300)},false);d.addEventListener("pageshow",function(j){if(j.persisted){clearTimeout(c);c=setTimeout(g,300)}},false);if(h.readyState==="complete"){h.body.style.fontSize="16px"}else{h.addEventListener("DOMContentLoaded",function(j){h.body.style.fontSize="16px"},false)}})(375,1000);</script>
+    <style>
+      #creenTips{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        z-index: 9999;
+      }
+      #creenTips>.creenTipsBox{
+        color: #fff;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="creenTips">
+      <div class="creenTipsBox">
+        <P>竖屏浏览效果更佳哦</P>
+        <p style="font-size: 10px;padding-top: 10px;">（温馨提醒：请记得解除屏幕锁定哦）</p>
+      </div>
+    </div>
+    <div id="error" style="display: none;">
+      <div class="navWrapper">
+        <div class="nav">
+          <div class="brand"></div>
+        </div>
+      </div>
+      <div id="errorWrapper">
+        <div class="error">
+          <div class="errorImg">
+          </div>
+          <div class="errorTips">
+            加载失败，点击重新加载
+          </div>
+      </div>
+      </div>
+    </div>
+    <!-- 环境判断是否加载vconsole -->
+    <script crossorigin="anonymous" src="/lib/vconsole.min.js"></script>
+    <script crossorigin="anonymous" src="/lib/react.production.min.js"></script>
+    <script crossorigin="anonymous" src="/lib/react-dom.production.min.js"></script>
+    <script crossorigin="anonymous" src="/lib/jsoneditor.min.js"></script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script>
+      if (!window.React) {
+        document.getElementById("error").style.display = "block";
+        var error = document.getElementById("errorWrapper");
+        error.addEventListener('click', function(){
+          document.location.reload()
+        })
+      }
+    </script>
+  </body>
+</html>
